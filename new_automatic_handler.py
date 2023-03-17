@@ -3,7 +3,6 @@
 # watchdog package's Observer class for observing any changes
 # watchdog package's FileSystemEventHandler to handle any moving process
 
-
 import sys
 import time
 import random
@@ -25,7 +24,7 @@ dir_tree = {
     "Setup_Files": ['.exe', '.bin', '.cmd', '.msi', '.dmg']
 }
 
-# Event Hanlder Class
+# Event Handler Class
 
 class FileMovementHandler(FileSystemEventHandler):
     def on_created(self, event):
@@ -38,8 +37,8 @@ class FileMovementHandler(FileSystemEventHandler):
 
             if extension in value:
 
-                file_name = os.path.basename(event.src_path)
-               
+                file_name = os.path.basename(event.src_path) # returns the file name with ext
+                
                 print("Downloaded " + file_name)
 
                 path1 = from_dir + '/' + file_name
